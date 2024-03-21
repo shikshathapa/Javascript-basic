@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of js</title>
+</head>
+<body>
+    <h1>Simple calculator</h1>
+    Enter first number 1 : <input id="num1">
+    Enter first number 2 : <input id="num2">
+    <label for="operator">operator:</label>
+    <select id="operator">
+    <option>Select operator</option>   
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<br><br><br>
+<center>
+<button onclick="calculate()">Hit Me</button>    
+<h1>RESULT: <span id="result" ></span></h1>
+
+</center>
+
+<script>
+
+
+
+
+  
+function calculate(){
+     var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+    var operator = document.getElementById("operator").value;
+
+    var result; 
+    switch(operator){
+        case "+":
+           result=num1+num2;
+        break;
+        case "-":
+           result=num1-num2;
+        break;
+        case "*":
+           result=num1*num2;
+        break;
+        case "/":
+          if(num2 !== 0){
+            result=num1/num2;
+          }else
+          {
+            document.getElementById("result").innerText = "Cannot divide";
+                return;
+            // result="Cannot divide";
+          }
+        break;
+
+        default:
+            result="please select operator"
+             }
+
+document.getElementById("result").innerText = result;
+  console.log(result);
+}
+
+</script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
